@@ -17,7 +17,7 @@ export default async function Index() {
         <div>
           <ul>
             {posts.map((post) =>
-              <li key={`/posts/${post.slug}`} className="flex flex-col space-y-2 xl:space-y-0 p-5 rounded hover:bg-neutral-50 group">
+              <li key={`/posts/${post.slug}`} className="flex flex-col space-y-2 xl:space-y-0 p-5 rounded-sm hover:bg-neutral-50 group">
                 <dl>
                   <dt className="sr-only">Published on</dt>
                   <dd className="text-sm font-medium leading-6 text-neutral-500 dark:text-neutral-400">

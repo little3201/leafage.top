@@ -8,7 +8,7 @@ export default function TagList({ tags }: { tags: string[] }) {
   const pathname = usePathname()
 
   return (
-    <div className="hidden h-full max-h-screen min-w-[200px] max-w-[280px] flex-wrap overflow-auto rounded pt-5 bg-neutral-50 sm:flex">
+    <div className="hidden h-full max-h-screen min-w-[200px] max-w-[280px] flex-wrap overflow-auto rounded-sm pt-5 bg-neutral-50 sm:flex">
       <div className="px-6 py-4">
         {pathname.startsWith('/posts') ? (
           <h3 className="font-bold uppercase text-primary-500">All Tags</h3>

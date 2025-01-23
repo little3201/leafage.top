@@ -55,7 +55,7 @@ export default function Index() {
           <div className="mt-10 flex items-center justify-center gap-x-6">
             <a
               href="#"
-              className="rounded-full bg-lime-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-lime-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime-600"
+              className="rounded-full bg-lime-600 px-4 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-lime-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime-600"
             >
               Get started
             </a>
