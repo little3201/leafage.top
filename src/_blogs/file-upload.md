@@ -3,7 +3,7 @@ title: "前端上传文件到云（七牛云）"
 excerpt: "前端项目中，直接上传文件/图片到云存储（以七牛云为例）的实现方法"
 date: "2021-09-18T01:05:12Z"
 ogImage:
-  url: "/assets/posts/cover.jpg"
+  url: "/assets/blogs/cover.jpg"
 tags: [
   "file",
   "upload",

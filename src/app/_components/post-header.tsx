@@ -23,7 +23,7 @@ export default function PostHeader({ title, tags, date }: Props) {
           dateTime={date}>
           {new Intl.DateTimeFormat('en-US', {
             year: 'numeric',
-            month: 'long',
+            month: 'short',
             day: 'numeric',
           }).format(new Date(date))}
         </time>

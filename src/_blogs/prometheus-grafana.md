@@ -3,7 +3,7 @@ title: "Prometheus 和 Grafana 服务搭建"
 excerpt: "搭建prometheus和grafana面板，监控各种服务运行"
 date: "2021-04-10T03:33:22Z"
 ogImage:
-  url: "/assets/posts/cover.jpg"
+  url: "/assets/blogs/cover.jpg"
 tags: [
   "grafana",
   "prometheus",

@@ -10,7 +10,7 @@ export default function TagList({ tags }: { tags: string[] }) {
   return (
     <div className="hidden h-full max-h-screen min-w-[200px] max-w-[280px] flex-wrap overflow-auto rounded-sm pt-5 bg-neutral-50 sm:flex">
       <div className="px-6 py-4">
-        {pathname.startsWith('/posts') ? (
+        {pathname.startsWith('/blogs') ? (
           <h3 className="font-bold uppercase text-primary-500">All Tags</h3>
         ) : (
           <Link
@@ -33,7 +33,7 @@ export default function TagList({ tags }: { tags: string[] }) {
                   <Link
                     href={`/tags/${t}`}
                     className="px-3 py-2 text-sm font-medium uppercase text-neutral-500 hover:text-primary-500 dark:text-neutral-300 dark:hover:text-primary-500"
-                    aria-label={`View posts tagged ${t}`}
+                    aria-label={`View blogs tagged ${t}`}
                   >
                     {`${t}`}
                   </Link>

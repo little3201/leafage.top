@@ -3,7 +3,7 @@ title: "Nginx 应用配置记录"
 excerpt: "Nginx 在实际项目应用中的基础配置。"
 date: "2021-09-26T00:28:26Z"
 ogImage:
-  url: "/assets/posts/cover.jpg"
+  url: "/assets/blogs/cover.jpg"
 tags: [
   "nginx",
   "nginx.conf",

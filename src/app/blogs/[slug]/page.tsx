@@ -45,9 +45,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 // Return a list of `params` to populate the [slug] dynamic segment
 export async function generateStaticParams() {
-  const posts = await getAllPosts()
+  const blogs = await getAllPosts()
 
-  return posts.map((post: Post) => ({
+  return blogs.map((post: Post) => ({
     slug: String(post.slug)
   }))
 }

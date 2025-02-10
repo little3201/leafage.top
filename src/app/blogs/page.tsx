@@ -7,23 +7,23 @@ import Tag from '@/app/_components/tag'
 import Pagination from '@/app/_components/pagination'
 
 export default async function Index() {
-  const posts = await getAllPosts()
+  const blogs = await getAllPosts()
 
-  const pagination = { totalPages: posts.length / 12, page: 1 }
+  const pagination = { totalPages: blogs.length / 12, page: 1 }
   return (
     <Suspense>
       <div className='flex space-x-24'>
-        <TagList tags={posts[0].tags} />
+        <TagList tags={blogs[0].tags} />
         <div>
           <ul>
-            {posts.map((post) =>
-              <li key={`/posts/${post.slug}`} className="flex flex-col space-y-2 xl:space-y-0 p-5 rounded-sm hover:bg-neutral-50 group">
+            {blogs.map((post) =>
+              <li key={`/blogs/${post.slug}`} className="flex flex-col space-y-2 xl:space-y-0 p-5 rounded-sm hover:bg-neutral-50 group">
                 <dl>
                   <dt className="sr-only">Published on</dt>
                   <dd className="text-sm font-medium leading-6 text-neutral-500 dark:text-neutral-400">
                     <time dateTime={post.date}>{new Intl.DateTimeFormat('en-US', {
                       year: 'numeric',
-                      month: 'long',
+                      month: 'short',
                       day: 'numeric',
                     }).format(new Date(post.date))}</time>
                   </dd>
@@ -31,7 +31,7 @@ export default async function Index() {
                 <div className="space-y-3">
                   <div>
                     <h2 className="text-xl font-bold leading-8 tracking-tight">
-                      <Link href={`/posts/${post.slug}`} className="text-neutral-900 group-hover:text-lime-600 dark:text-neutral-100">
+                      <Link href={`/blogs/${post.slug}`} className="text-neutral-900 group-hover:text-lime-600 dark:text-neutral-100">
                         {post.title}
                       </Link>
                     </h2>

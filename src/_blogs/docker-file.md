@@ -3,7 +3,7 @@ title: "Dockerfile 指令学习总结"
 excerpt: "Dockerfile 描述了组装镜像的步骤，其中每条指令都是单独执行的。除了FROM指令，其他每一条指令都会在上一条指令所生成镜像的基础上执行，执行完后会生成一个新的镜像层，新的镜像层覆盖在原来的镜像之上从而形成了新的镜像"
 date: "2022-01-25T08:22:22Z"
 ogImage:
-  url: "/assets/posts/cover.jpg"
+  url: "/assets/blogs/cover.jpg"
 tags: [
   "file",
   "upload",
