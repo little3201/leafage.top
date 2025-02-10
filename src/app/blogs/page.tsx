@@ -1,13 +1,13 @@
 import { Suspense } from 'react'
 import Link from 'next/link'
-import { getAllPosts } from '@/lib/api'
+import { getAllBlogs } from '@/lib/api'
 
 import TagList from '@/app/_components/tag-list'
 import Tag from '@/app/_components/tag'
 import Pagination from '@/app/_components/pagination'
 
 export default async function Index() {
-  const blogs = await getAllPosts()
+  const blogs = await getAllBlogs()
 
   const pagination = { totalPages: blogs.length / 12, page: 1 }
   return (

@@ -5,11 +5,11 @@ import { join } from "path"
 
 const postsDirectory = join(process.cwd(), "src/_blogs");
 
-export function getPostSlugs() {
+export function getBlogSlugs() {
   return fs.readdirSync(postsDirectory);
 }
 
-export function getPostBySlug(slug: string) {
+export function getBlogBySlug(slug: string) {
   const realSlug = slug.replace(/\.md$/, "");
   const fullPath = join(postsDirectory, `${realSlug}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
@@ -18,10 +18,10 @@ export function getPostBySlug(slug: string) {
   return { ...data, slug: realSlug, content } as Post;
 }
 
-export function getAllPosts(): Post[] {
-  const slugs = getPostSlugs();
+export function getAllBlogs(): Post[] {
+  const slugs = getBlogSlugs();
   const blogs = slugs
-    .map((slug) => getPostBySlug(slug))
+    .map((slug) => getBlogBySlug(slug))
     // sort blogs by date in descending order
     .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
   return blogs;
