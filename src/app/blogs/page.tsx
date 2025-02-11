@@ -16,31 +16,31 @@ export default async function Index() {
         <TagList tags={blogs[0].tags} />
         <div>
           <ul>
-            {blogs.map((post) =>
-              <li key={`/blogs/${post.slug}`} className="flex flex-col space-y-2 xl:space-y-0 p-5 rounded-sm hover:bg-neutral-50 group">
+            {blogs.map((blog) =>
+              <li key={`/blogs/${blog.slug}`} className="flex flex-col space-y-2 xl:space-y-0 p-5 rounded-sm hover:bg-gray-50 group">
                 <dl>
                   <dt className="sr-only">Published on</dt>
-                  <dd className="text-sm font-medium leading-6 text-neutral-500 dark:text-neutral-400">
-                    <time dateTime={post.date}>{new Intl.DateTimeFormat('en-US', {
+                  <dd className="text-sm font-medium leading-6 text-gray-500 dark:text-gray-400">
+                    <time dateTime={blog.date}>{new Intl.DateTimeFormat('en-US', {
                       year: 'numeric',
                       month: 'short',
                       day: 'numeric',
-                    }).format(new Date(post.date))}</time>
+                    }).format(new Date(blog.date))}</time>
                   </dd>
                 </dl>
                 <div className="space-y-3">
                   <div>
                     <h2 className="text-xl font-bold leading-8 tracking-tight">
-                      <Link href={`/blogs/${post.slug}`} className="text-neutral-900 group-hover:text-lime-600 dark:text-neutral-100">
-                        {post.title}
+                      <Link href={`/blogs/${blog.slug}`} className="text-gray-900 group-hover:text-lime-600 dark:text-gray-100">
+                        {blog.title}
                       </Link>
                     </h2>
                     <div className="flex flex-wrap space-x-2 mt-1">
-                      {post.tags.map((tag) => <Tag key={tag} text={tag} />)}
+                      {blog.tags.map((tag) => <Tag key={tag} text={tag} />)}
                     </div>
                   </div>
-                  <div className="text-sm text-neutral-500 dark:text-neutral-400">
-                    {post.excerpt}
+                  <div className="text-sm text-gray-500 dark:text-gray-400">
+                    {blog.excerpt}
                   </div>
                 </div>
               </li>
