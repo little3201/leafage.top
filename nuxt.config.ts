@@ -1,19 +1,19 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import tailwindcss from "@tailwindcss/vite"
+
 export default defineNuxtConfig({
-  modules: [
-    '@nuxt/content',
-    '@nuxt/image'
-  ],
-  routeRules: {
-    '/api/search.json': { prerender: true },
-    '/docs': { redirect: '/docs/getting-started', prerender: false }
+  future: {
+    compatibilityVersion: 4
   },
+
+  devtools: { enabled: true },
   css: ['~/assets/css/main.css'],
-  postcss: {
-    plugins: {
-      tailwindcss: {},
-      autoprefixer: {},
-    },
+
+  vite: {
+    plugins: [
+      tailwindcss(),
+    ],
   },
-  devtools: { enabled: true }
+
+  compatibilityDate: "2025-02-26",
 })
