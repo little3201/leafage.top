@@ -12,6 +12,7 @@ export default defineNuxtConfig({
     '@nuxt/content',
     "@nuxt/eslint"
   ],
+
   css: ['~/assets/css/main.css'],
 
   vite: {
@@ -19,4 +20,6 @@ export default defineNuxtConfig({
       tailwindcss(),
     ],
   },
+
+  compatibilityDate: "2025-03-03"
 })
