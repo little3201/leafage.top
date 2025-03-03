@@ -2,10 +2,10 @@
   <header class="absolute inset-x-0 top-0 z-50">
     <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
       <div class="flex lg:flex-1">
-        <a href="#" class="-m-1.5 p-1.5">
+        <NuxtLink to="/" class="-m-1.5 p-1.5">
           <span class="sr-only">Your Company</span>
-          <img class="h-8 w-auto" src="/logo.svg" alt="logo" />
-        </a>
+          <img class="h-8 w-auto" src="/logo.svg" alt="logo">
+        </NuxtLink>
       </div>
       <div class="flex lg:hidden">
         <button type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
@@ -41,7 +41,9 @@
                         {{ item.name }}
                         <span class="absolute inset-0" />
                       </a>
-                      <p class="mt-1 text-gray-600">{{ item.description }}</p>
+                      <p class="mt-1 text-gray-600">
+                        {{ item.description }}
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -56,25 +58,25 @@
             </PopoverPanel>
           </transition>
         </Popover>
-        <NuxtLink v-for="item in navigation" :key="item.name" :to="item.href" class="text-sm/6 font-semibold text-gray-900">
+        <NuxtLink v-for="item in navigation" :key="item.name" :to="item.href"
+          class="text-sm/6 font-semibold text-gray-900">
           {{ item.name }}
         </NuxtLink>
       </PopoverGroup>
       <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-        <a href="https://github.com/little3201" target="_blank"
+        <a id="github" href="https://github.com/little3201" target="_blank"
           class="w-9 h-9 rounded-full text-gray-700 dark:text-gray-300 flex items-center justify-center transition-colors duration-200"
-          id="github" type="button" aria-expanded="false">
+          type="button" aria-expanded="false">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
             stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
             className="feather feather-github">
             <path
-              d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-            </path>
+              d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
           </svg>
         </a>
       </div>
     </nav>
-    <Dialog class="lg:hidden" @close="mobileMenuOpen = false" :open="mobileMenuOpen">
+    <Dialog class="lg:hidden" :open="mobileMenuOpen" @close="mobileMenuOpen = false">
       <div class="fixed inset-0 z-50" />
       <DialogPanel
         class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
@@ -82,7 +84,7 @@
           <a href="#" class="-m-1.5 p-1.5">
             <span class="sr-only">Your Company</span>
             <img class="h-8 w-auto" src="https://tailwindui.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600"
-              alt="" />
+              alt="">
           </a>
           <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700" @click="mobileMenuOpen = false">
             <span class="sr-only">Close menu</span>
@@ -107,8 +109,6 @@
       </DialogPanel>
     </Dialog>
   </header>
-
-  
 </template>
 
 <script setup lang="ts">
