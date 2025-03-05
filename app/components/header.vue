@@ -83,8 +83,7 @@
         <div class="flex items-center justify-between">
           <a href="#" class="-m-1.5 p-1.5">
             <span class="sr-only">Your Company</span>
-            <img class="h-8 w-auto" src="https://tailwindui.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600"
-              alt="">
+            <img class="h-8 w-auto" src="/logo.svg" alt="logo">
           </a>
           <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700" @click="mobileMenuOpen = false">
             <span class="sr-only">Close menu</span>
@@ -134,7 +133,7 @@ const callsToAction = [
 ]
 
 const navigation = [
-  { name: 'Blog', href: '/blogs' },
+  { name: 'Blogs', href: '/blogs' },
   { name: 'Docs', href: '/docs' },
   { name: 'FAQ', href: '/faq' },
 ]

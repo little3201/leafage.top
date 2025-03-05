@@ -119,9 +119,9 @@ export default defineAppConfig({
 It supports code highlighting with Shiki and as well as different [VS Code themes](https://github.com/shikijs/shiki/blob/main/docs/themes.md#all-themes).
 
 ::markdown-block
-\`\`\`ts
+```ts
 export default () => 'Hello Content Wind'
-\`\`\`
+```
 ::
 
 Will result in:
@@ -149,10 +149,6 @@ Learn more in the [Content Code Highlight section](https://content.nuxt.com/get-
 ### Vue Components
 
 Add Vue components into the `components/` directory and start using them in Markdown.
-
-See the `<MarkdownBlock>` component in [`components/MarkdownBlock.vue`](https://github.com/Atinux/content-wind/blob/main/.demo/components/MarkdownBlock.vue).
-
-By leveraging the [`<ContentSlot>`](https://content.nuxt.com/components/content-slot) component from Nuxt Content, you can use both slots and props in Markdown thanks to the [MDC syntax](https://content.nuxt.com/usage/markdown).
 
 ## Deployment
 

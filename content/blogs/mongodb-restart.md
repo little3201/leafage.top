@@ -6,9 +6,9 @@ seo:
   ogImage:
     url: "/assets/blogs/cover.jpg"
   tags: [
-    "mvn",
-    "linux",
-    "link"
+    "Mvn",
+    "Linux",
+    "Link"
   ]
 ---
 

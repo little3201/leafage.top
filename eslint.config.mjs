@@ -10,7 +10,8 @@ export default withNuxt(
         // https://eslint.org/docs/latest/use/configure/configuration-files
         'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
         'vue/multi-word-component-names': 'off',
-        'vue/no-multiple-template-root': 'off'
+        'vue/no-multiple-template-root': 'off',
+        'vue/first-attribute-linebreak': 'off'
       }
     }
   ]

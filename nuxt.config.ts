@@ -21,5 +21,15 @@ export default defineNuxtConfig({
     ],
   },
 
-  compatibilityDate: "2025-03-03"
+  compatibilityDate: "2025-03-03",
+
+  content: {
+    build: {
+      markdown: {
+        highlight: {
+          langs: ['sql', 'java', 'xml']
+        }
+      }
+    }
+  }
 })
