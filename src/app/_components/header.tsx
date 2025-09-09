@@ -9,9 +9,9 @@ import {
   Disclosure,
   DisclosureButton,
   DisclosurePanel,
+  PopoverGroup,
   Popover,
   PopoverButton,
-  PopoverGroup,
   PopoverPanel,
 } from '@headlessui/react'
 import {
@@ -177,13 +177,9 @@ export default function Header() {
                   </DisclosurePanel>
                 </Disclosure>
                 {navigation.map((item) => (
-                  <a
-                    key={item.name}
-                    href={item.href}
-                    className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
-                  >
+                  <Link key={item.name} href={item.href} target="_blank" className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">
                     {item.name}
-                  </a>
+                  </Link>
                 ))}
               </div>
               <div className="py-6">
