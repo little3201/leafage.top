@@ -3,7 +3,7 @@ title: "Linux 下配置命令工具的解析"
 excerpt: "安装各种服务有很多方法，但是可能会因为各种原因需要的版本不是系统默认的仓库中提供的"
 date: "2022-03-13T09:11:44Z"
 ogImage:
-  url: "/assets/posts/cover.jpg"
+  url: "/assets/blogs/cover.jpg"
 tags: [
   "mvn",
   "linux",

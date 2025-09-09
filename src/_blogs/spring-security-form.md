@@ -3,7 +3,7 @@ title: "Spring security 学习和踩坑总结（表单）"
 excerpt: "formLogin 登录就是表单登录，对于未认证的请求进行拦截，跳转到登录页，处理完登录请求之后，如果成功则会redirect到请求拦截之前的路径"
 date: "2021-04-28T13:18:44Z"
 ogImage:
-  url: "/assets/posts/cover.jpg"
+  url: "/assets/blogs/cover.jpg"
 tags: [
   "spring",
   "security",
@@ -12,7 +12,7 @@ tags: [
 ]
 ---
 
-在[上一篇](posts/spring-security)中，介绍了Spring Security的默认配置。本篇继续来了解如何进行定制配置。Spring Security 默认的配置是 formLogin 和 httpBasic 两种模式，
+在[上一篇](blogs/spring-security)中，介绍了Spring Security的默认配置。本篇继续来了解如何进行定制配置。Spring Security 默认的配置是 formLogin 和 httpBasic 两种模式，
 
 # FormLogin分析：
 
@@ -48,4 +48,4 @@ _注：图中报错代码是因为我项目是spring cloud gateway, 用的是web
 
 其中config(H)方法覆写了SecurityConfigurerAdapter中的config(H)方法，该方法把获取到的accessDeniedHandler处理器添加了一个ExceptionTranslationFilter过滤器，并将这个过滤器给了过滤器链。
 
-回过头来再看DefaultLoginPageGenerationFilter和DefaultLogoutPageGenerationFilter这两个过滤器都做了哪些事情。DefaultLoginPageGenerationFilter继承抽象类GenericFilterBean，GenericFilterBean实现了Filter接口，DefaultLoginPageGenerationFilter的作用就是用户没有配置登录页的时候给一个默认配置。同样的DefaultLogoutPageGenerationFilter也是一样的，具体的内容在上一篇[spring security 学习和踩坑总结（入门）](https://www.leafage.top/posts/detail/208291JMJ)中大概介绍过了，详细信息查看上一篇文章。
+回过头来再看DefaultLoginPageGenerationFilter和DefaultLogoutPageGenerationFilter这两个过滤器都做了哪些事情。DefaultLoginPageGenerationFilter继承抽象类GenericFilterBean，GenericFilterBean实现了Filter接口，DefaultLoginPageGenerationFilter的作用就是用户没有配置登录页的时候给一个默认配置。同样的DefaultLogoutPageGenerationFilter也是一样的，具体的内容在上一篇[spring security 学习和踩坑总结（入门）](https://www.leafage.top/blogs/detail/208291JMJ)中大概介绍过了，详细信息查看上一篇文章。

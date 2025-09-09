@@ -20,5 +20,6 @@ export async function parseMarkdown(doc: string) {
     .use(rehypeHighlight)
     .use(rehypeStringify)
     .process(doc)
+
   return String(file)
 }

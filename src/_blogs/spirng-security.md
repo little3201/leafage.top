@@ -3,7 +3,7 @@ title: "Spring security 学习和踩坑总结（入门）"
 excerpt: "Java Web项目的权限管理框架，目前有两个比较成熟且使用较多的框架，Shiro 和 Spring Security ，Shiro 比 Spring Security更加轻量级，但是需要手动配置的东西较多，Spring Security 和 Spring 集成更好，甚至直接适配了Spring Boot"
 date: "2021-04-10T03:32:35Z"
 ogImage:
-  url: "/assets/posts/cover.jpg"
+  url: "/assets/blogs/cover.jpg"
 tags: [
   "spring",
   "security",

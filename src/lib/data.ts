@@ -1,6 +1,6 @@
 export const headerList = [
   { title: 'Home', path: '/' },
-  { title: 'Posts', path: '/posts' },
+  { title: 'Blogs', path: '/blogs' },
   { title: 'Docs', path: '/docs' },
   { title: 'About', path: '/about' }
 ]
