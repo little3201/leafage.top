@@ -1,11 +1,10 @@
 <template>
-  <section class="flex space-x-24 p-24">
-    <div
-      class="hidden h-full max-h-screen min-w-[200px] max-w-[280px] flex-wrap overflow-auto rounded-sm bg-gray-50 lg:flex">
+  <section class="flex space-x-12 p-24">
+    <div class="hidden h-full max-h-screen w-64 overflow-auto rounded-sm bg-gray-50 lg:block">
       <EssentialLink :items="navigation" />
     </div>
-    <ContentRenderer v-if="page" :value="page" :prose="false"
-      class="prose dark:prose-invert prose-pre:bg-gray-100 dark:prose-pre:bg-gray-900" />
+    <ContentRenderer v-if="page" :value="page"
+      class="prose mx-auto max-w-3xl dark:prose-invert prose-pre:bg-gray-100 dark:prose-pre:bg-gray-900" />
   </section>
 </template>
 
@@ -15,7 +14,7 @@ import type { ContentNavigationItem } from '@nuxt/content'
 const route = useRoute()
 const navigation = inject<Ref<ContentNavigationItem[]>>('navigation')
 
-const { data: page } = await useAsyncData('docs', () => queryCollection('docs').path(route.path).first())
+const { data: page } = await useAsyncData(route.path, () => queryCollection('docs').path(route.path).first())
 if (!page.value) {
   throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })
 }

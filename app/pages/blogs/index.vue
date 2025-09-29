@@ -10,11 +10,9 @@
         <dl>
           <dt class="sr-only">Published on</dt>
           <dd class="text-sm font-medium leading-6 text-gray-500 dark:text-gray-400">
-            <time dateTime={blog.date}>{{ new Intl.DateTimeFormat('en-US', {
-              year: 'numeric',
-              month: 'short',
-              day: 'numeric',
-            }).format(new Date(item.date)) }}</time>
+            <time dateTime={blog.date}>{{ new Intl.DateTimeFormat('en-US',
+              { year: 'numeric', month: 'short', day: 'numeric' }).format(new Date(item.date)) }}
+            </time>
           </dd>
         </dl>
         <div class="space-y-3">
@@ -43,7 +41,7 @@
 <script setup lang="ts">
 import type { ContentNavigationItem } from '@nuxt/content'
 
-const { data: blogs } = await useAsyncData('blogs', () => queryCollection('blogs')
+const { data: blogs } = await useAsyncData(() => queryCollection('blogs')
   .select('title', 'path', 'date', 'description', 'seo', 'id')
   .order('date', 'DESC')
   .all())
