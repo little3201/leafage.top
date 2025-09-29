@@ -1,7 +1,6 @@
 <template>
-  <section class="flex space-x-24 p-24">
-    <div
-      class="hidden h-full max-h-screen min-w-[200px] max-w-[280px] flex-wrap overflow-auto rounded-sm bg-gray-50 lg:flex">
+  <section class="flex space-x-12 p-6">
+    <div class="hidden h-full max-h-screen w-64 shrink-0 overflow-auto rounded-sm bg-gray-50 lg:block">
       <EssentialLink :items="navigation" />
     </div>
     <ul>
@@ -41,6 +40,7 @@
 <script setup lang="ts">
 import type { ContentNavigationItem } from '@nuxt/content'
 
+
 const { data: blogs } = await useAsyncData(() => queryCollection('blogs')
   .select('title', 'path', 'date', 'description', 'seo', 'id')
   .order('date', 'DESC')
@@ -68,7 +68,7 @@ watchEffect(() => {
 const navigation = computed<Array<ContentNavigationItem>>(() =>
   Object.keys(tagsCount.value).map(tag => ({
     title: tag + ' (' + tagsCount.value[tag] + ')',
-    path: ''
+    path: '/blogs?tag=' + tag
   }))
 )
 </script>

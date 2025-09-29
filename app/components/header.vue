@@ -1,5 +1,5 @@
 <template>
-  <header class="absolute inset-x-0 top-0 z-10">
+  <header>
     <nav class="flex items-center justify-between px-6 py-4 lg:px-8">
       <div class="inline-flex lg:flex-1">
         <NuxtLink to="/" class="-m-1.5 p-1.5">

@@ -13,7 +13,10 @@ export default defineContentConfig({
           to: z.string(),
           target: z.string().optional()
         })).optional()
-      })
+      }),
+      navigation: {
+        title: 'Documentation'
+      }
     }),
     blogs: defineCollection({
       type: 'page',

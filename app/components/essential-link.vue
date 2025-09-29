@@ -1,5 +1,5 @@
 <template>
-  <ul class="isolate pl-4">
+  <ul class="pl-4">
     <li v-for="item in items" :key="item.title" class="my-3">
       <div v-if="item.children && item.children.length > 0">
         <h3 class="inline px-3 py-2 text-sm font-bold">

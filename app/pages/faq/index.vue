@@ -1,5 +1,5 @@
 <template>
-  <section class="p-24">
+  <section class="p-6">
     <h1>Welcome to the faqpage</h1>
   </section>
 </template>
