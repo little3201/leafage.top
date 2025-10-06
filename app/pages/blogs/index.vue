@@ -38,37 +38,9 @@
 </template>
 
 <script setup lang="ts">
-import type { ContentNavigationItem } from '@nuxt/content'
-
-
+const { data: navigation } = await useAsyncData('navigation', () => queryCollectionNavigation('blogs'))
 const { data: blogs } = await useAsyncData(() => queryCollection('blogs')
   .select('title', 'path', 'date', 'description', 'seo', 'id')
   .order('date', 'DESC')
   .all())
-
-// 提取并统计标签
-const tagsCount = ref<Record<string, number>>({})
-watchEffect(() => {
-  const tags: Record<string, number> = {}
-  blogs.value?.forEach(blog => {
-    if (blog.seo && Array.isArray(blog.seo.tags)) {
-      blog.seo.tags.forEach(tag => {
-        if (tags[tag]) {
-          tags[tag]++
-        } else {
-          tags[tag] = 1
-        }
-      })
-    }
-  })
-  tagsCount.value = tags
-})
-
-// 转换为数组格式便于显示
-const navigation = computed<Array<ContentNavigationItem>>(() =>
-  Object.keys(tagsCount.value).map(tag => ({
-    title: tag + ' (' + tagsCount.value[tag] + ')',
-    path: '/blogs?tag=' + tag
-  }))
-)
 </script>
