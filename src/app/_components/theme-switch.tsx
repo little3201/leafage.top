@@ -8,8 +8,9 @@ export default function ThemeSwitch() {
   return (
     <button type='button' onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')} title="theme_button"
       className="w-9 h-9 flex items-center justify-center rounded-full outline-none transition-colors duration-200">
-      {theme === 'dark' ? <SunIcon className="size-6 text-gray-700 dark:text-gray-300" />
-        : <MoonIcon className="h-5 w-5 text-gray-700 dark:text-gray-300" />
+      {theme === 'dark' ?
+        <MoonIcon className="size-5 text-gray-700 dark:text-gray-300" />
+        : <SunIcon className="h-6 w-6 text-gray-700 dark:text-gray-300" />
       }
     </button>
   )
