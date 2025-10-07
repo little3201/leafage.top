@@ -25,7 +25,9 @@
         </div>
       </div>
 
-      <div class="hidden lg:inline-flex lg:flex-1 lg:justify-end">
+      <div class="hidden lg:inline-flex lg:flex-1 lg:justify-end space-x-4">
+        <ThemeToggle />
+        <!-- github -->
         <a id="github" href="https://github.com/little3201" target="_blank"
           class="w-7 h-7 rounded-full text-gray-700 dark:text-gray-300 flex items-center justify-center transition-colors duration-200"
           type="button" aria-expanded="false">

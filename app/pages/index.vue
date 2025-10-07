@@ -1,6 +1,6 @@
 <template>
   <section class="relative isolate px-6 pt-14 lg:px-8">
-    <div class="absolute inset-0 transform-gpu overflow-hidden blur-3xl" aria-hidden="true">
+    <div class="absolute inset-0 transform-gpu overflow-hidden blur-3xl -z-10" aria-hidden="true">
       <div
         class="relative left-[calc(50%-11rem)] aspect-1155/678 w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-linear-to-tr from-lime-300 to-emerald-400 opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
         style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)" />
@@ -23,8 +23,9 @@
         </p>
         <div class="mt-10 flex items-center justify-center gap-x-6">
           <a href="#"
-            class="rounded-full bg-lime-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-lime-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime-600">Get
-            started</a>
+            class="rounded-full bg-lime-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-lime-600">
+            Get started
+          </a>
           <a href="#" class="text-sm/6 font-semibold text-gray-900">Read document <span aria-hidden="true">→</span></a>
         </div>
       </div>
@@ -44,7 +45,7 @@
       <div class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
         <div class="lg:pt-4 lg:pr-8">
           <div class="lg:max-w-lg">
-            <h2 class="text-base/7 font-semibold text-indigo-600 dark:text-indigo-400">Deploy faster</h2>
+            <h2 class="text-base/7 font-semibold text-lime-600 dark:text-lime-400">Deploy faster</h2>
             <p class="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl dark:text-white">
               A better workflow</p>
             <p class="mt-6 text-lg/8 text-gray-700 dark:text-gray-300">Lorem ipsum, dolor sit amet consectetur
@@ -53,8 +54,8 @@
             <dl class="mt-10 max-w-xl space-y-8 text-base/7 text-gray-600 lg:max-w-none dark:text-gray-400">
               <div v-for="feature in features" :key="feature.name" class="relative pl-9">
                 <dt class="inline font-semibold text-gray-900 dark:text-white">
-                  <component :is="feature.icon"
-                    class="absolute top-1 left-1 size-5 text-indigo-600 dark:text-indigo-400" aria-hidden="true" />
+                  <component :is="feature.icon" class="absolute top-1 left-1 size-5 text-lime-600 dark:text-lime-400"
+                    aria-hidden="true" />
                   {{ feature.name }}
                 </dt>
                 {{ ' ' }}
@@ -63,12 +64,10 @@
             </dl>
           </div>
         </div>
-        <img src="https://tailwindcss.com/plus-assets/img/component-images/dark-project-app-screenshot.png"
-          alt="Product screenshot"
+        <img src="~/assets/preview-dark.jpeg" alt="Preview dark mode"
           class="w-3xl max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 not-dark:hidden sm:w-228 md:-ml-4 lg:-ml-0 dark:ring-white/10"
           width="2432" height="1442">
-        <img src="https://tailwindcss.com/plus-assets/img/component-images/project-app-screenshot.png"
-          alt="Product screenshot"
+        <img src="~/assets/preview-light.jpeg" alt="Preview light mode"
           class="w-3xl max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-228 md:-ml-4 lg:-ml-0 dark:hidden dark:ring-white/10"
           width="2432" height="1442">
       </div>
@@ -78,7 +77,7 @@
   <!-- Bento -->
   <section class="bg-gray-50 py-24 sm:py-32">
     <div class="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
-      <h2 class="text-center text-base/7 font-semibold text-indigo-600">Deploy faster</h2>
+      <h2 class="text-center text-base/7 font-semibold text-lime-600">Deploy faster</h2>
       <p
         class="mx-auto mt-2 max-w-lg text-center text-4xl font-semibold tracking-tight text-balance text-gray-950 sm:text-5xl">
         Everything you need to deploy your app</p>
