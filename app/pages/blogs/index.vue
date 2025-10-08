@@ -1,3 +1,11 @@
+<script setup lang="ts">
+const { data: navigation } = await useAsyncData('navigation', () => queryCollectionNavigation('blogs'))
+const { data: blogs } = await useAsyncData(() => queryCollection('blogs')
+  .select('title', 'path', 'date', 'description', 'seo', 'id')
+  .order('date', 'DESC')
+  .all())
+</script>
+
 <template>
   <section class="flex space-x-12 p-6">
     <div class="hidden h-full max-h-screen w-64 shrink-0 overflow-auto rounded-sm bg-gray-50 lg:block">
@@ -36,11 +44,3 @@
     </ul>
   </section>
 </template>
-
-<script setup lang="ts">
-const { data: navigation } = await useAsyncData('navigation', () => queryCollectionNavigation('blogs'))
-const { data: blogs } = await useAsyncData(() => queryCollection('blogs')
-  .select('title', 'path', 'date', 'description', 'seo', 'id')
-  .order('date', 'DESC')
-  .all())
-</script>

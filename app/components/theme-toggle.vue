@@ -7,6 +7,14 @@ import {
 
 const isDark = useDark()
 const toggleDark = useToggle(isDark)
+
+watchEffect(() => {
+  useHead({
+    htmlAttrs: {
+      style: `color-scheme: ${isDark.value ? 'dark' : 'light'}`,
+    }
+  })
+})
 </script>
 
 <template>

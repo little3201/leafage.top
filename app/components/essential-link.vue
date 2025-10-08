@@ -1,3 +1,14 @@
+<script setup lang="ts">
+import type { ContentNavigationItem } from '@nuxt/content'
+
+defineProps({
+  items: {
+    type: Array<ContentNavigationItem>,
+    default: []
+  },
+})
+</script>
+
 <template>
   <ul class="pl-4">
     <li v-for="item in items" :key="item.title" class="my-3">
@@ -14,14 +25,3 @@
     </li>
   </ul>
 </template>
-
-<script setup lang="ts">
-import type { ContentNavigationItem } from '@nuxt/content'
-
-defineProps({
-  items: {
-    type: Array<ContentNavigationItem>,
-    default: []
-  },
-})
-</script>

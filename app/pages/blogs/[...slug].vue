@@ -1,3 +1,13 @@
+<script setup lang="ts">
+const route = useRoute()
+const { data: navigation } = await useAsyncData(() => queryCollectionNavigation('blogs'))
+
+const { data: page } = await useAsyncData(route.path, () => queryCollection('blogs').path(route.path).first())
+if (!page.value) {
+  throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })
+}
+</script>
+
 <template>
   <section class="flex space-x-12 p-6">
     <div class="hidden h-full max-h-screen w-64 shrink-0 overflow-auto rounded-sm bg-gray-50 lg:block">
@@ -15,13 +25,3 @@
     </div>
   </section>
 </template>
-
-<script setup lang="ts">
-const route = useRoute()
-const { data: navigation } = await useAsyncData(() => queryCollectionNavigation('blogs'))
-
-const { data: page } = await useAsyncData(route.path, () => queryCollection('blogs').path(route.path).first())
-if (!page.value) {
-  throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })
-}
-</script>

@@ -1,11 +1,3 @@
-<template>
-  <NuxtLoadingIndicator />
-  <NuxtLayout>
-    <NuxtPage />
-  </NuxtLayout>
-</template>
-
-
 <script setup lang="ts">
 useHead({
   htmlAttrs: {
@@ -14,3 +6,9 @@ useHead({
   title: 'Leafage',
 })
 </script>
+
+<template>
+  <NuxtLayout>
+    <NuxtPage />
+  </NuxtLayout>
+</template>

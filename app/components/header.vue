@@ -1,6 +1,22 @@
+<script setup lang="ts">
+import { Dialog, DialogPanel } from '@headlessui/vue'
+import {
+  Bars3Icon, XMarkIcon
+} from '@heroicons/vue/24/outline'
+
+const navigation = [
+  { name: 'Home', href: '/' },
+  { name: 'Blogs', href: '/blogs' },
+  { name: 'Docs', href: '/docs' },
+  { name: 'FAQ', href: '/faq' },
+]
+
+const mobileMenuOpen = ref(false)
+</script>
+
 <template>
-  <header>
-    <nav class="flex items-center justify-between px-6 py-4 lg:px-8">
+  <header class="container mx-auto">
+    <nav class="flex items-center justify-between px-6 py-4 lg:px-8" aria-label="Global">
       <div class="inline-flex lg:flex-1">
         <NuxtLink to="/" class="-m-1.5 p-1.5">
           <span class="sr-only">leafage</span>
@@ -8,17 +24,18 @@
         </NuxtLink>
       </div>
       <div class="inline-flex lg:hidden">
-        <button type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+        <button type="button"
+          class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700 dark:text-gray-200"
           @click="mobileMenuOpen = true">
           <span class="sr-only">Open main menu</span>
           <Bars3Icon class="size-6" aria-hidden="true" />
         </button>
       </div>
 
-      <div class="hidden lg:block w-full max-w-md rounded-full border border-gray-900/20 ">
+      <div class="hidden lg:block w-full max-w-md rounded-full border border-gray-900/20 dark:border-gray-100/20">
         <div class="flex space-x-1 text-center">
           <NuxtLink v-for="item in navigation" :key="item.name" :to="item.href"
-            class="font-medium text-gray-900 w-full px-4 py-2 rounded-full hover:border border-gray-900/20"
+            class="font-medium text-gray-900 dark:text-white w-full px-4 py-2 rounded-full hover:border border-gray-900/20 dark:border-gray-100/20 dark:bg-transparent"
             active-class="text-lime-600 border">
             {{ item.name }}
           </NuxtLink>
@@ -41,22 +58,23 @@
     <Dialog class="lg:hidden" :open="mobileMenuOpen" @close="mobileMenuOpen = false">
       <div class="fixed inset-0 z-10" />
       <DialogPanel
-        class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+        class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 dark:bg-gray-900 dark:sm:ring-gray-100/10">
         <div class="flex items-center justify-between">
           <a href="#" class="-m-1.5 p-1.5">
             <span class="sr-only">leafage</span>
             <img class="h-8 w-auto" src="/logo.svg" alt="logo">
           </a>
-          <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700" @click="mobileMenuOpen = false">
+          <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700 dark:text-gray-200"
+            @click="mobileMenuOpen = false">
             <span class="sr-only">Close menu</span>
             <XMarkIcon class="size-6" aria-hidden="true" />
           </button>
         </div>
         <div class="mt-6 flow-root">
-          <div class="-my-6 divide-y divide-gray-500/10">
+          <div class="-my-6 divide-y divide-gray-500/10 dark:divide-white/10">
             <div class="space-y-2 py-6">
               <NuxtLink v-for="item in navigation" :key="item.name" :to="item.href"
-                class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
+                class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50 dark:text-white dark:hover:bg-white/5"
                 active-class="text-lime-600">
                 {{ item.name }}
               </NuxtLink>
@@ -76,19 +94,3 @@
     </Dialog>
   </header>
 </template>
-
-<script setup lang="ts">
-import { Dialog, DialogPanel } from '@headlessui/vue'
-import {
-  Bars3Icon, XMarkIcon
-} from '@heroicons/vue/24/outline'
-
-const navigation = [
-  { name: 'Home', href: '/' },
-  { name: 'Blogs', href: '/blogs' },
-  { name: 'Docs', href: '/docs' },
-  { name: 'FAQ', href: '/faq' },
-]
-
-const mobileMenuOpen = ref(false)
-</script>
