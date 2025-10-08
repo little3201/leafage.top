@@ -8,12 +8,12 @@ const { data: blogs } = await useAsyncData(() => queryCollection('blogs')
 
 <template>
   <section class="flex space-x-12 p-6">
-    <div class="hidden h-full max-h-screen w-64 shrink-0 overflow-auto rounded-sm bg-gray-50 lg:block">
+    <div class="hidden h-full max-h-screen w-64 shrink-0 overflow-auto rounded-sm bg-gray-50 dark:bg-gray-900 lg:block">
       <EssentialLink :items="navigation" />
     </div>
     <ul>
       <li v-for="item in blogs" :key="item.title"
-        class="flex flex-col space-y-2 xl:space-y-0 p-5 rounded-sm hover:bg-gray-50 group">
+        class="flex flex-col space-y-2 xl:space-y-0 p-5 rounded-sm hover:bg-gray-50 dark:hover:bg-black/80 group">
         <dl>
           <dt class="sr-only">Published on</dt>
           <dd class="text-sm font-medium leading-6 text-gray-500 dark:text-gray-400">

@@ -19,7 +19,7 @@ defineProps({
         <EssentialLink :items="item.children" />
       </div>
       <NuxtLink v-else :to="item.path"
-        :class="['px-3 py-2 text-sm font-medium text-gray-500 hover:text-primary-500 dark:text-gray-300 dark:hover:text-primary-500', $route.path === item.path ? 'text-lime-500' : '']">
+        :class="['px-3 py-2 text-sm font-medium text-gray-500 hover:text-primary-500 dark:text-gray-300 dark:hover:text-lime-500', $route.path === item.path ? 'text-lime-500' : '']">
         {{ item.title }}
       </NuxtLink>
     </li>

@@ -18,7 +18,7 @@ const mobileMenuOpen = ref(false)
   <header class="container mx-auto">
     <nav class="flex items-center justify-between px-6 py-4 lg:px-8" aria-label="Global">
       <div class="inline-flex lg:flex-1">
-        <NuxtLink to="/" class="-m-1.5 p-1.5">
+        <NuxtLink to="/" class="-m-1.5 p-1.5" exact>
           <span class="sr-only">leafage</span>
           <img class="h-10 w-auto" src="/logo.svg" alt="logo">
         </NuxtLink>
@@ -32,11 +32,11 @@ const mobileMenuOpen = ref(false)
         </button>
       </div>
 
-      <div class="hidden lg:block w-full max-w-md rounded-full border border-gray-900/20 dark:border-gray-100/20">
+      <div
+        class="hidden lg:block w-full max-w-md rounded-full ring-1 ring-gray-900/20 dark:text-gray-400 dark:ring-white/20">
         <div class="flex space-x-1 text-center">
           <NuxtLink v-for="item in navigation" :key="item.name" :to="item.href"
-            class="font-medium text-gray-900 dark:text-white w-full px-4 py-2 rounded-full hover:border border-gray-900/20 dark:border-gray-100/20 dark:bg-transparent"
-            active-class="text-lime-600 border">
+            class="font-medium text-gray-900 dark:text-white w-full px-4 py-2 rounded-full hover:ring-1 ring-gray-900/20 dark:ring-white/20">
             {{ item.name }}
           </NuxtLink>
         </div>
