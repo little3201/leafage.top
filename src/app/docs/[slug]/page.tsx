@@ -32,25 +32,3 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
     </div>
   )
 }
-
-
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata | undefined> {
-  const slug = (await params).slug
-  const data = await queryCollection('docs').path(slug);
-
-  if (!data) {
-    return notFound()
-  }
-
-  return {
-    title: data.title,
-    description: data.title
-  };
-}
-
-// Return a list of `params` to populate the [slug] dynamic segment
-export async function generateStaticParams() {
-  const docs = await queryCollectionNavigation('docs')
-
-  return docs.map((doc: NavigationItem) => doc.slug)
-}

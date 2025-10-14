@@ -1,6 +1,6 @@
 import fs from "fs"
 import matter from "gray-matter"
-import { join } from "path"
+import { join, posix } from "path"
 import type { NavigationItem, NavigationWithContent } from '@/interfaces'
 
 
@@ -14,11 +14,10 @@ class CollectionQuery {
 
   /** 加载并缓存指定目录下的所有 Markdown 文件 */
   private async loadFiles() {
-    if (this.files.length > 0) return // ✅ 缓存机制，避免重复读取
+    if (this.files.length > 0) return
 
     const dirPath = join(process.cwd(), "src", `_${this.dir}`)
     if (!fs.existsSync(dirPath)) {
-      console.warn(`[CollectionQuery] 目录不存在: ${dirPath}`)
       return
     }
 
@@ -29,9 +28,10 @@ class CollectionQuery {
       const fileContents = fs.readFileSync(fullPath, "utf8")
       const { data, content } = matter(fileContents)
 
+      const slug = fileName.replace(/\.md$/, "")
       return {
-        slug: fileName.replace(/\.md$/, ""),
-        path: join('/', this.dir, fileName.replace(/\.md$/, "")),
+        slug,
+        path: slug.toLocaleLowerCase() === 'index' ? "" : posix.join(this.dir, fileName.replace(/\.md$/, "")),
         ...data,
         content
       } as NavigationWithContent
@@ -47,6 +47,10 @@ class CollectionQuery {
   /** 根据 slug 获取指定文件 */
   async path(slug: string): Promise<NavigationWithContent | null> {
     await this.loadFiles()
+    if (!this.files || this.files.length === 0) {
+      return null
+    }
+
     return this.files?.find(file => file.slug === slug) ?? null
   }
 

@@ -7,7 +7,7 @@ export type NavigationItem = {
     tags?: string[]
   }
   excerpt: string
-  children?: NavigationItem[]
+  // children?: NavigationItem[]
 }
 
 export type NavigationWithContent = NavigationItem & {

@@ -15,7 +15,6 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
   }
 
   const content = await parseMarkdown(data.content || "");
-
   return (
     <article>
       <h1 className="container mx-auto p-4 text-4xl font-semibold tracking-tight text-center lg:text-4xl lg:leading-snug">
@@ -43,25 +42,4 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
       </div>
     </article>
   )
-}
-
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata | undefined> {
-  const slug = (await params).slug
-  const data = await queryCollection('blogs').path(slug)
-
-  if (!data) {
-    return notFound()
-  }
-
-  return {
-    title: data.title,
-    description: data.title
-  };
-}
-
-// Return a list of `params` to populate the [slug] dynamic segment
-export async function generateStaticParams() {
-  const navigation = await queryCollectionNavigation('blogs')
-
-  return navigation.map((item: NavigationItem) => item.slug)
 }
