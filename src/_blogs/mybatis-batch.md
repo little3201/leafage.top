@@ -2,14 +2,13 @@
 title: "Mybatis 批量操作 SQL 写法"
 excerpt: "mybatis 批量操作的SQL写法"
 date: "2021-09-23T08:38:35Z"
-ogImage:
-  url: "/assets/blogs/cover.jpg"
-tags: [
-  "mybatis",
-  "batch",
-  "insert",
-  "update"
-]
+seo:
+  tags: [
+    "mybatis",
+    "batch",
+    "insert",
+    "update"
+  ]
 ---
 
 ## 在使用foreach时，collection属性值的三种情况：

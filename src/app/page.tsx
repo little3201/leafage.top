@@ -85,7 +85,7 @@ export default function Index() {
 
       {/* Feature */}
       <section className="overflow-hidden py-24 sm:py-32">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="mx-auto container px-6 lg:px-8">
           <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
             <div className="lg:pt-4 lg:pr-8">
               <div className="lg:max-w-lg">
@@ -113,16 +113,16 @@ export default function Index() {
                 </dl>
               </div>
             </div>
-            <img
+            <Image
               alt="Product screenshot"
-              src="/preview-dark.jpeg"
+              src="/images/preview-dark.jpeg"
               width={2432}
               height={1442}
               className="w-3xl max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 not-dark:hidden sm:w-228 md:-ml-4 lg:-ml-0 dark:ring-white/10"
             />
-            <img
+            <Image
               alt="Product screenshot"
-              src="/preview-light.jpeg"
+              src="/images/preview-light.jpeg"
               width={2432}
               height={1442}
               className="w-3xl max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-228 md:-ml-4 lg:-ml-0 dark:hidden dark:ring-white/10"
@@ -133,7 +133,7 @@ export default function Index() {
 
       {/* beno */}
       <section className="bg-gray-50 py-24 sm:py-32 dark:bg-transparent">
-        <div className="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
+        <div className="container mx-auto px-6 lg:px-8">
           <h2 className="text-center text-base/7 font-semibold text-lime-600 dark:text-lime-400">Deploy faster</h2>
           <p className="mx-auto mt-2 max-w-lg text-center text-4xl font-semibold tracking-tight text-balance text-gray-950 sm:text-5xl dark:text-white">
             Everything you need to deploy your app
@@ -152,10 +152,12 @@ export default function Index() {
                 </div>
                 <div className="@container relative min-h-120 w-full grow max-lg:mx-auto max-lg:max-w-sm">
                   <div className="absolute inset-x-10 top-10 bottom-0 overflow-hidden rounded-t-[12cqw] border-x-[3cqw] border-t-[3cqw] border-gray-700 bg-gray-900 shadow-2xl dark:shadow-none dark:outline dark:outline-white/20">
-                    <img
+                    <Image
                       alt=""
-                      src="https://tailwindcss.com/plus-assets/img/component-images/bento-03-mobile-friendly.png"
+                      src="/images/bento-03-mobile-friendly.png"
                       className="size-full object-cover object-top"
+                      width={300}
+                      height={430}
                     />
                   </div>
                 </div>
@@ -174,15 +176,19 @@ export default function Index() {
                   </p>
                 </div>
                 <div className="flex flex-1 items-center justify-center px-8 max-lg:pt-10 max-lg:pb-12 sm:px-10 lg:pb-2">
-                  <img
-                    alt=""
-                    src="https://tailwindcss.com/plus-assets/img/component-images/bento-03-performance.png"
+                  <Image
+                    alt="performance-light"
+                    src="/images/bento-03-performance.png"
                     className="w-full max-lg:max-w-xs dark:hidden"
+                    width={400}
+                    height={130}
                   />
-                  <img
-                    alt=""
-                    src="https://tailwindcss.com/plus-assets/img/component-images/dark-bento-03-performance.png"
+                  <Image
+                    alt="performance-dark"
+                    src="/images/dark-bento-03-performance.png"
                     className="w-full not-dark:hidden max-lg:max-w-xs"
+                    width={400}
+                    height={130}
                   />
                 </div>
               </div>
@@ -200,15 +206,19 @@ export default function Index() {
                   </p>
                 </div>
                 <div className="@container flex flex-1 items-center max-lg:py-6 lg:pb-2">
-                  <img
+                  <Image
                     alt=""
-                    src="https://tailwindcss.com/plus-assets/img/component-images/bento-03-security.png"
+                    src="/images/bento-03-security.png"
                     className="h-[min(152px,40cqw)] object-cover dark:hidden"
+                    width={480}
+                    height={152}
                   />
-                  <img
+                  <Image
                     alt=""
-                    src="https://tailwindcss.com/plus-assets/img/component-images/dark-bento-03-security.png"
+                    src="/images/dark-bento-03-security.png"
                     className="h-[min(152px,40cqw)] object-cover not-dark:hidden"
+                    width={480}
+                    height={152}
                   />
                 </div>
               </div>

@@ -2,14 +2,13 @@
 title: "Spring security 学习和踩坑总结（表单）"
 excerpt: "formLogin 登录就是表单登录，对于未认证的请求进行拦截，跳转到登录页，处理完登录请求之后，如果成功则会redirect到请求拦截之前的路径"
 date: "2021-04-28T13:18:44Z"
-ogImage:
-  url: "/assets/blogs/cover.jpg"
-tags: [
-  "spring",
-  "security",
-  "form",
-  "java"
-]
+seo:
+  tags: [
+    "spring",
+    "security",
+    "form",
+    "java"
+  ]
 ---
 
 在[上一篇](blogs/spring-security)中，介绍了Spring Security的默认配置。本篇继续来了解如何进行定制配置。Spring Security 默认的配置是 formLogin 和 httpBasic 两种模式，

@@ -2,13 +2,12 @@
 title: "Mongo 服务重启异常问题记录"
 excerpt: "服务器经常性断电，所以要经常性重启所有的服务，然而这些redis、mysql、mongo等服务中，mongo经常性出现重启失败的情况，根据之前的经验和网络上帖子的信息"
 date: "2021-06-28T07:13:53Z"
-ogImage:
-  url: "/assets/blogs/cover.jpg"
-tags: [
-  "mvn",
-  "linux",
-  "link"
-]
+seo:
+  tags: [
+    "mvn",
+    "linux",
+    "link"
+  ]
 ---
 
 服务器经常性断电，所以要经常性重启所有的服务，然而这些redis、mysql、mongo等服务中，mongo经常性出现重启失败的情况，根据之前的经验和网络上帖子的信息，这里记录一下总结；

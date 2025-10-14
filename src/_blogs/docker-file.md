@@ -2,14 +2,14 @@
 title: "Dockerfile 指令学习总结"
 excerpt: "Dockerfile 描述了组装镜像的步骤，其中每条指令都是单独执行的。除了FROM指令，其他每一条指令都会在上一条指令所生成镜像的基础上执行，执行完后会生成一个新的镜像层，新的镜像层覆盖在原来的镜像之上从而形成了新的镜像"
 date: "2022-01-25T08:22:22Z"
-ogImage:
-  url: "/assets/blogs/cover.jpg"
-tags: [
-  "file",
-  "upload",
-  "typescript",
-  "qiniu-js"
-]
+seo:
+  tags: [
+    "file",
+    "upload",
+    "typescript",
+    "qiniu-js"
+  ]
+
 ---
 
 Dockerfile 描述了组装镜像的步骤，其中每条指令都是单独执行的。除了FROM指令，其他每一条指令都会在上一条指令所生成镜像的基础上执行，执行完后会生成一个新的镜像层，新的镜像层覆盖在原来的镜像之上从而形成了新的镜像。Dockerfile所生成的最终镜像就是在基础镜像上面叠加一层层的镜像层组件的。Dockerfile 分为四部分：基础镜像信息、维护者信息、镜像操作指令和容器启动时执行指令。
