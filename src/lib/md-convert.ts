@@ -9,7 +9,7 @@ import rehypeSanitize from 'rehype-sanitize'
 import rehypeStringify from 'rehype-stringify'
 
 
-export async function parseMarkdown(doc: string) {
+export async function parseMarkdown(md: string) {
   const file = await unified()
     .use(remarkParse, { fragment: true })
     .use(remarkGfm)
@@ -19,7 +19,7 @@ export async function parseMarkdown(doc: string) {
     .use(rehypeExternalLinks, { target: '_blank', rel: ['nofollow'] })
     .use(rehypeHighlight)
     .use(rehypeStringify)
-    .process(doc)
+    .process(md)
 
   return String(file)
 }

@@ -2,13 +2,12 @@
 title: "一步步实现redis分布式锁"
 excerpt: "当高并发场景下，会有多个请求同时获取到同样的数据，然后进行操作，实际上操作了多次，但是库存只减了一次"
 date: "2021-02-02T08:28:43Z"
-ogImage:
-  url: "/assets/blogs/cover.jpg"
-tags: [
-  "java",
-  "redis",
-  "lock"
-]
+seo:
+  tags: [
+    "java",
+    "redis",
+    "lock"
+  ]
 ---
 
 ### 使用场景：

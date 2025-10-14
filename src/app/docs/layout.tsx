@@ -6,5 +6,5 @@ export const metadata: Metadata = {
 }
 
 export default function DocLayout({ children }: { children: React.ReactNode }) {
-    return <section className="p-24">{children}</section>
+  return <section className="container mx-auto lg:py-24">{children}</section>
 }

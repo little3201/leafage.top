@@ -2,14 +2,13 @@
 title: "前端上传文件到云（七牛云）"
 excerpt: "前端项目中，直接上传文件/图片到云存储（以七牛云为例）的实现方法"
 date: "2021-09-18T01:05:12Z"
-ogImage:
-  url: "/assets/blogs/cover.jpg"
-tags: [
-  "file",
-  "upload",
-  "typescript",
-  "qiniu-js"
-]
+seo:
+  tags: [
+    "file",
+    "upload",
+    "typescript",
+    "qiniu-js"
+  ]
 ---
 
 > 之前看了几次七牛云的文档，折腾了几次，没有成功，然后又开始了各种找资料，看文档，看示例，终于搞定了。

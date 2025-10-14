@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { ThemeProvider } from 'next-themes'
 import './globals.css'
 
-import Header from '@/app/_components/header'
+import Header from '@/app/ui/header'
 
 export const metadata: Metadata = {
   title: {
@@ -31,7 +31,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             <div className=" text-gray-700 dark:text-gray-300 text-opacity-70">
               <div className='flex items-center justify-center text-sm'>
                 <span>
-                  Copyright &copy; {new Date().getFullYear()} Leafage. - License By
+                  Copyright &copy; {new Date().getFullYear()} Leafage. License By
                   <a href="https://github.com/little3201/leafage-pw/blob/main/LICENSE"
                     rel="noopener noreferrer"
                     target="_blank"
