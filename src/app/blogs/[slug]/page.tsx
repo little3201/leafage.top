@@ -1,8 +1,6 @@
-import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { parseMarkdown } from "@/lib/md-convert"
-import { queryCollectionNavigation, queryCollection } from '@/lib/api'
-import type { NavigationItem } from '@/interfaces'
+import { queryCollection } from '@/lib/api'
 import '@/app/highlight-theme.css'
 
 
@@ -14,7 +12,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
     return notFound()
   }
 
-  const content = await parseMarkdown(data.content || "");
+  const content = await parseMarkdown(data.content || "")
   return (
     <article>
       <h1 className="container mx-auto p-4 text-4xl font-semibold tracking-tight text-center lg:text-4xl lg:leading-snug">

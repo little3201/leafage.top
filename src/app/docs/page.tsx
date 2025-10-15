@@ -7,7 +7,7 @@ export default async function Page() {
 
   const data = await queryCollection('docs').first()
   if (!data) {
-    throw new Error("No documents found");
+    throw new Error("No documents found")
   }
 
   const content = await parseMarkdown(data.content || "")
