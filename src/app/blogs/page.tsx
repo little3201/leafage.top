@@ -10,12 +10,15 @@ export default async function Index() {
         {navigation.map((item) => (
           <article key={item.slug} className="flex max-w-xl flex-col items-start justify-between">
             <div className="flex items-center gap-x-4 text-xs">
-              <time dateTime={item.date}>{new Intl.DateTimeFormat('en-US', {
-                year: 'numeric',
-                month: 'short',
-                day: 'numeric',
-              }).format(new Date(item.date))}
-              </time>
+              {item.date && (
+                <time dateTime={item.date}>
+                  {new Intl.DateTimeFormat('en-US', {
+                    year: 'numeric',
+                    month: 'short',
+                    day: 'numeric',
+                  }).format(new Date(item.date))}
+                </time>
+              )}
             </div>
             <div className="group relative grow">
               <h3 className="mt-3 text-lg/6 font-semibold text-gray-900 group-hover:text-lime-600 dark:text-white dark:group-hover:text-gray-300">
