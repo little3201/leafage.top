@@ -18,6 +18,7 @@ const navigation = [
 
 export default function Header() {
   const pathname = usePathname()
+  const basePath = pathname.split('/')[1] ? `/${pathname.split('/')[1]}` : '/'
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
@@ -49,7 +50,7 @@ export default function Header() {
         <div className="hidden lg:block w-full max-w-md rounded-full border border-gray-900/20 dark:border-gray-100/20">
           <div className="flex space-x-1 text-center">
             {navigation.map((item) => (
-              <Link key={item.name} href={item.href} className={`font-medium text-gray-900 dark:text-gray-100 w-full px-4 py-2 rounded-full hover:border border-gray-900/20 dark:border-gray-100/20 dark:bg-transparent ${pathname === item.href ? 'border border-lime-600 text-lime-600' : ''}`}>
+              <Link key={item.name} href={item.href} className={`font-medium text-gray-900 dark:text-gray-100 w-full px-4 py-2 rounded-full hover:border border-gray-900/20 dark:border-gray-100/20 dark:bg-transparent ${basePath === item.href ? 'border border-lime-600 text-lime-600' : ''}`}>
                 {item.name}
               </Link>
             ))}

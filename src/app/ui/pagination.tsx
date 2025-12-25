@@ -5,9 +5,9 @@ import Link from 'next/link'
 
 import type { Pagination } from '@/interfaces/pagination'
 
-export default function Pagination({ totalPages, page }: Pagination) {
+export default function Pagination({ totalPages, page }: Readonly<Pagination>) {
   const pathname = usePathname()
-  const basePath = pathname.split('/')[1]
+  const basePath = pathname.split('/')[1] ? pathname.split('/')[1] : ''
   const prevPage = page - 1 > 0
   const nextPage = page + 1 <= totalPages
 

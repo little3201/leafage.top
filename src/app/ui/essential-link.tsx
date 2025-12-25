@@ -4,9 +4,9 @@ import Link from 'next/link'
 import type { NavigationItem } from '@/interfaces'
 
 
-export default function EssentialLink({ items }: { items: NavigationItem[] }) {
+export default function EssentialLink({ items }: Readonly<{ items: NavigationItem[] }>) {
   return (
-    <div className="hidden h-full max-h-screen w-72 flex-wrap overflow-auto rounded-sm pt-5 bg-gray-50 sm:flex">
+    <div className="hidden h-full max-h-screen w-72 flex-wrap overflow-hidden rounded-sm pt-5 bg-gray-50 sm:flex">
       <ul className="px-4">
         {items.map((item) => (
           <li key={item.slug} className="mb-2">

@@ -4,7 +4,7 @@ import { queryCollection } from '@/lib/api'
 import '@/app/highlight-theme.css'
 
 
-export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
+export default async function Page({ params }: Readonly<{ params: Promise<{ slug: string }> }>) {
   const slug = (await params).slug
   const data = await queryCollection('blogs').path(slug)
 
