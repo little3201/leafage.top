@@ -1,3 +1,12 @@
+# leafage.top
+
+<p align="center">
+ <img src="https://sonarcloud.io/api/project_badges/measure?project=little3201_leafage.top&metric=alert_status" alt="Quality Gate Status">
+ <img src="https://sonarcloud.io/api/project_badges/measure?project=little3201_leafage.top&metric=code_smells" alt="code_smells"/>
+ <img src="https://sonarcloud.io/api/project_badges/measure?project=little3201_leafage.top&metric=bugs" alt="bugs">
+ <img src="https://sonarcloud.io/api/project_badges/measure?project=little3201_leafage.top&metric=security_rating" alt="security rating"/>
+</p>
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
