@@ -43,7 +43,7 @@ export default function Index() {
             <div className="relative rounded-full px-3 py-1 text-sm/6 text-gray-600 dark:text-gray-400 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
               Announcing our next round of funding.{' '}
               <a href="https://leafage.top/docs" className="font-semibold text-lime-500">
-                <span aria-hidden="true" className="absolute inset-0" />
+                <span aria-hidden="true" className="absolute inset-0"></span>
                 Read more <span aria-hidden="true">&rarr;</span>
               </a>
             </div>

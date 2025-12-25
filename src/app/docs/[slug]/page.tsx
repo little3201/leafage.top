@@ -5,7 +5,7 @@ import { queryCollectionNavigation, queryCollection } from '@/lib/api'
 
 
 
-export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
+export default async function Page({ params }: Readonly<{ params: Promise<{ slug: string }> }>) {
   const navigation = await queryCollectionNavigation('docs')
 
   const slug = (await params).slug
