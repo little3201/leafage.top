@@ -1,14 +1,14 @@
-import fs from "fs"
+import fs from "node:fs"
+import { join, posix } from "node:path"
 import matter from "gray-matter"
-import { join, posix } from "path"
 import type { NavigationItem, NavigationWithContent } from '@/interfaces'
 
 type SortOrder = 'ASC' | 'DESC'
 
 class CollectionQuery {
-  private dir: string
+  private readonly dir: string
   private files: NavigationItem[] = []
-  private filesWithContent: Map<string, NavigationWithContent> = new Map()
+  private readonly filesWithContent: Map<string, NavigationWithContent> = new Map()
 
   constructor(dir: string) {
     this.dir = dir
@@ -55,42 +55,39 @@ class CollectionQuery {
   private async initializeFiles() {
     const dirPath = join(process.cwd(), "src", `_${this.dir}`)
     if (!fs.existsSync(dirPath)) {
-      console.warn(`[CollectionQuery] 目录不存在: ${dirPath}`)
-      return
+      throw new Error(`[CollectionQuery] 目录不存在: ${dirPath}`);
     }
 
     this.files = await this.loadFiles(dirPath)
   }
 
+  private async ensureFilesLoaded() {
+    if (this.files.length === 0) {
+      await this.initializeFiles();
+    }
+  }
+
   /** 获取全部文件（只含路径信息） */
   async all(): Promise<NavigationItem[]> {
-    if (this.files.length === 0) {
-      await this.initializeFiles()
-    }
+    await this.ensureFilesLoaded()
     return this.files
   }
 
   /** 获取第一个文件（只含路径信息） */
   async first(): Promise<NavigationWithContent | null> {
-    if (this.files.length === 0) {
-      await this.initializeFiles()
-    }
+    await this.ensureFilesLoaded()
     return this.filesWithContent.get(this.files[0].slug) ?? null
   }
 
   /** 根据 slug 获取指定文件 */
   async path(slug: string): Promise<NavigationWithContent | null> {
-    if (this.files.length === 0) {
-      await this.initializeFiles()
-    }
+    await this.ensureFilesLoaded()
     return this.filesWithContent.get(slug) ?? null
   }
 
   /** 只返回 frontmatter data（不含 excerpt 与 content） */
   async navigation(): Promise<NavigationItem[]> {
-    if (this.files.length === 0) {
-      await this.initializeFiles()
-    }
+    await this.ensureFilesLoaded()
     return this.files
   }
 }

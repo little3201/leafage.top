@@ -35,14 +35,14 @@ export default function Index() {
               clipPath:
                 'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
             }}
-            className="relative left-[calc(50%-11rem)] aspect-1155/678 w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-linear-to-tr from-lime-300 to-emerald-400 opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
+            className="relative left-[calc(50%-11rem)] aspect-1155/678 w-xl -translate-x-1/2 rotate-30 bg-linear-to-tr from-lime-300 to-emerald-400 opacity-30 sm:left-[calc(50%-30rem)] sm:w-6xl"
           />
         </div>
         <div className="mx-auto max-w-4xl py-24">
           <div className="hidden sm:mb-8 sm:flex sm:justify-center">
             <div className="relative rounded-full px-3 py-1 text-sm/6 text-gray-600 dark:text-gray-400 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
               Announcing our next round of funding.{' '}
-              <a href="#" className="font-semibold text-lime-500">
+              <a href="https://leafage.top/docs" className="font-semibold text-lime-500">
                 <span aria-hidden="true" className="absolute inset-0" />
                 Read more <span aria-hidden="true">&rarr;</span>
               </a>
@@ -58,12 +58,12 @@ export default function Index() {
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <a
-                href="#"
+                href="https://leafage.top/docs"
                 className="bg-lime-500 px-3.5 py-2.5 rounded-full text-sm font-semibold text-white shadow-xs hover:bg-lime-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime-600"
               >
                 Get started
               </a>
-              <a href="#" className="text-sm/6 font-semibold text-gray-900 dark:text-gray-300">
+              <a href="https://leafage.top/docs" className="text-sm/6 font-semibold text-gray-900 dark:text-gray-300">
                 Read document <span aria-hidden="true">→</span>
               </a>
             </div>
@@ -78,7 +78,7 @@ export default function Index() {
               clipPath:
                 'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
             }}
-            className="relative left-[calc(50%+3rem)] aspect-1155/678 w-[36.125rem] -translate-x-1/2 bg-linear-to-tr from-lime-300 to-emerald-400 opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
+            className="relative left-[calc(50%+3rem)] aspect-1155/678 w-xl -translate-x-1/2 bg-linear-to-tr from-lime-300 to-emerald-400 opacity-30 sm:left-[calc(50%+36rem)] sm:w-6xl"
           />
         </div>
       </section>
@@ -117,14 +117,14 @@ export default function Index() {
               src="/images/preview-dark.jpeg"
               width={2432}
               height={1442}
-              className="w-3xl max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 not-dark:hidden sm:w-228 md:-ml-4 lg:-ml-0 dark:ring-white/10"
+              className="w-3xl max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 not-dark:hidden sm:w-228 md:-ml-4 lg:ml-0 dark:ring-white/10"
             />
             <Image
               alt="Product screenshot"
               src="/images/preview-light.jpeg"
               width={2432}
               height={1442}
-              className="w-3xl max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-228 md:-ml-4 lg:-ml-0 dark:hidden dark:ring-white/10"
+              className="w-3xl max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-228 md:-ml-4 lg:ml-0 dark:hidden dark:ring-white/10"
             />
           </div>
         </div>
