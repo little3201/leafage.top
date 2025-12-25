@@ -5,17 +5,20 @@ export default async function Index() {
   const navigation = await queryCollectionNavigation('blogs')
 
   return (
-    <div className="container mx-auto lg:py-24">
+    <div className="container mx-auto px-4 lg:px-8 lg:py-24">
       <div className="grid grid-cols-1 gap-x-8 gap-y-16 lg:grid-cols-3 dark:border-gray-700">
         {navigation.map((item) => (
           <article key={item.slug} className="flex max-w-xl flex-col items-start justify-between">
             <div className="flex items-center gap-x-4 text-xs">
-              <time dateTime={item.date}>{new Intl.DateTimeFormat('en-US', {
-                year: 'numeric',
-                month: 'short',
-                day: 'numeric',
-              }).format(new Date(item.date))}
-              </time>
+              {item.date && (
+                <time dateTime={item.date}>
+                  {new Intl.DateTimeFormat('en-US', {
+                    year: 'numeric',
+                    month: 'short',
+                    day: 'numeric',
+                  }).format(new Date(item.date))}
+                </time>
+              )}
             </div>
             <div className="group relative grow">
               <h3 className="mt-3 text-lg/6 font-semibold text-gray-900 group-hover:text-lime-600 dark:text-white dark:group-hover:text-gray-300">

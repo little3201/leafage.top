@@ -1,9 +1,7 @@
-import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import EssentialLink from '@/app/ui/essential-link'
 import { parseMarkdown } from "@/lib/md-convert"
 import { queryCollectionNavigation, queryCollection } from '@/lib/api'
-import type { NavigationItem } from '@/interfaces'
 
 
 

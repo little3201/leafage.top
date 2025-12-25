@@ -2,15 +2,10 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import Image from 'next/image'
-import {
-  Dialog,
-  DialogPanel
-} from '@headlessui/react'
-import {
-  Bars3Icon,
-  XMarkIcon,
-} from '@heroicons/react/24/outline'
+import { Dialog, DialogPanel } from '@headlessui/react'
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import ThemeSwitch from '@/app/ui/theme-switch'
 
 
@@ -22,6 +17,7 @@ const navigation = [
 ]
 
 export default function Header() {
+  const pathname = usePathname()
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
@@ -53,7 +49,7 @@ export default function Header() {
         <div className="hidden lg:block w-full max-w-md rounded-full border border-gray-900/20 dark:border-gray-100/20">
           <div className="flex space-x-1 text-center">
             {navigation.map((item) => (
-              <Link key={item.name} href={item.href} className="font-medium text-gray-900 dark:text-gray-100 w-full px-4 py-2 rounded-full hover:border border-gray-900/20 dark:border-gray-100/20 dark:bg-transparent">
+              <Link key={item.name} href={item.href} className={`font-medium text-gray-900 dark:text-gray-100 w-full px-4 py-2 rounded-full hover:border border-gray-900/20 dark:border-gray-100/20 dark:bg-transparent ${pathname === item.href ? 'border border-lime-600 text-lime-600' : ''}`}>
                 {item.name}
               </Link>
             ))}

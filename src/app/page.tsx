@@ -28,7 +28,7 @@ export default function Index() {
   ]
   return (
     <div>
-      <section className="relative isolate px-6 pt-14 lg:px-8">
+      <section className="relative isolate px-4 pt-14 lg:px-8">
         <div aria-hidden="true" className="absolute inset-0 transform-gpu overflow-hidden blur-3xl -z-10">
           <div
             style={{
@@ -59,7 +59,7 @@ export default function Index() {
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <a
                 href="#"
-                className="rounded-md bg-lime-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-lime-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime-600"
+                className="bg-lime-500 px-3.5 py-2.5 rounded-full text-sm font-semibold text-white shadow-xs hover:bg-lime-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime-600"
               >
                 Get started
               </a>
@@ -84,12 +84,11 @@ export default function Index() {
       </section>
 
       {/* Feature */}
-      <section className="overflow-hidden py-24 sm:py-32">
-        <div className="mx-auto container px-6 lg:px-8">
+      <section className="py-24 sm:py-32">
+        <div className="mx-auto container overflow-hidden px-4 lg:px-8">
           <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
             <div className="lg:pt-4 lg:pr-8">
               <div className="lg:max-w-lg">
-                <h2 className="text-base/7 font-semibold text-lime-600 dark:text-lime-400">Deploy faster</h2>
                 <p className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl dark:text-white">
                   A better workflow
                 </p>
@@ -133,8 +132,7 @@ export default function Index() {
 
       {/* beno */}
       <section className="bg-gray-50 py-24 sm:py-32 dark:bg-transparent">
-        <div className="container mx-auto px-6 lg:px-8">
-          <h2 className="text-center text-base/7 font-semibold text-lime-600 dark:text-lime-400">Deploy faster</h2>
+        <div className="container mx-auto px-4 lg:px-8">
           <p className="mx-auto mt-2 max-w-lg text-center text-4xl font-semibold tracking-tight text-balance text-gray-950 sm:text-5xl dark:text-white">
             Everything you need to deploy your app
           </p>
